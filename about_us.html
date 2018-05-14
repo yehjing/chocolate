@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About us</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<style>
+	*{	
+		font-family:'微軟正黑體';
+		/*font-family: 'Lobster', cursive;*/
+		margin:0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	a{
+		text-decoration: none;
+		color:#fff;
+	}
+	a:hover{
+		color:#bd9f60;
+		text-decoration: none;
+	}
+	li{
+		list-style-type: none;
+	}
+	.wrap{
+		width: 100%;
+		/*height:100vh;*/
+		background-color: #2b2b2b;
+		position: relative;
+	}
+	.area1{
+		/*display:inline-block;*/
+		width:100%;
+		height:300px;
+		background: url(images/S_20170706114438UI1O.jpg) no-repeat 40% 40%;
+		/*background-size: cover;*/
+		/*overflow: hidden;*/
+		color: #fff;
+		
+	}
+	.divH1{
+		text-align: center;
+		
+		text-shadow: 0px 0px 8px #FFFFFF;
+	}
+	.divH1 h1{
+		line-height: 300px;
+		font-size: 40px;
+	}
+	.area2{
+		/*border:1px solid #000;*/
+		width:100%;
+		height:550px;
+		background: url(images/abt-01-p.jpg) no-repeat 20% 20%;
+		background-size: cover;
+		overflow: hidden;
+	}
+	.area3{
+		/*border:1px solid #000;*/
+		width:100%;
+		height:550px;
+		background: url(images/abt-02-p.jpg) no-repeat 20% 20%;
+		background-size: cover;
+		overflow: hidden;
+	}
+	.area4{
+		/*border:1px solid #000;*/
+		width:100%;
+		height:550px;
+		background: url(images/abt-03-p.jpg) no-repeat 20% 20%;
+		background-size: cover;
+		overflow: hidden;
+	}
+	.area5{
+		width:100%;
+		height:550px;
+		background: url(images/abt-04-p.jpg) no-repeat 0 0;
+		background-size: cover;
+		overflow: hidden;
+	}
+	.area6{
+		width:100%;
+		height:550px;
+		background: url(images/abt-05-p.jpg) no-repeat 0 0;
+		background-size: cover;
+		overflow: hidden;
+	}
+	footer{
+		width: 100%;
+		height:380px;
+		background:linear-gradient(135deg, #efe6d7 0%,#ffffff 42%,#ffffff 57%,#efe6d7 100%);
+	}
+	/*-------------hamburger---------------------------------*/
+	.space{
+		height:100px;
+	}
+	.transition{
+   		transition: 0.4s;
+	}
+	.menu{
+	    display: inline-block;
+	    cursor: pointer;
+	    padding:30px;
+	    position:fixed;
+		z-index: 100;
+	}
+
+	.menu ul{
+
+	    /*background: #000;*/
+	    position: absolute;
+	    height:100vh;
+	    max-width: 0;
+	    overflow: hidden;
+	    top:0;
+	    left:0;
+	    /*filter: blur(8px);*/
+
+	}
+	.menu.active ul{
+		background: rgba(0,0,0,.4);
+
+	    /*max-width:600px;*/
+	    max-width:1800px;
+	}
+	.menu ul li{
+		width:600px;
+		height:100px;
+		color:#fff;
+		line-height: 100px;
+	}
+	.menu ul li:hover{
+		color:#bd9f60;
+	}
+	.menu ul li a{
+		/*width:600px;
+		height:100px;*/
+	    display: block;
+	    padding:0 15px;
+	    font-size: 28px;
+	}
+	
+	ul,li{
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
+	}
+	.bar{
+	    width: 50px;
+	    height: 5px;
+	    background: #fff;
+	    margin: 10px 0;
+	    border-radius: 2px;
+	}
+	/*.menu:hover .bar1,.menu:hover .bar2,.menu:hover .bar3{
+	    background:rgba(255,255,255,.7);
+	}*/
+	.active .bar1{
+	    transform: rotate(-45deg) translate(-11px, 9px) ;
+	    /*background-color: #000;*/
+	}
+
+	.active .bar2{
+		opacity: 0;
+	}
+
+	.active .bar3{
+	    transform: rotate(45deg) translate(-12px, -10px) ;
+	    /*background-color: #000;*/
+	}
+	.frontImg{
+		width:5%;
+		height:5%;
+		margin-right: 10px;
+	}
+/*-------------------------area2------------------------------------------*/
+	.area2{
+		text-align: center;
+		color: #fff;
+	}
+	.area2P{
+		display: inline-block;
+		font-size:20px;
+		margin-bottom:1%;
+		padding: 1%;
+		border-bottom: 1px solid #fff;
+		/*text-align: center;*/
+		margin-top:3%;
+	}
+	.area2C{
+		font-size:80px;
+		font-family:  'Lobster', cursive;
+		color:#d0af6a;
+		margin:0 auto;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area2CA{
+		font-size:50px;
+		font-family:  'Lobster', cursive;
+		margin-top: -1%;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area2P4{
+		font-size: 24px;
+		margin-bottom: 4%;
+	}
+	/*--------------------------------------------------------------*/
+	.area3{
+
+		/*text-align: center;*/
+		color: #fff;
+	}
+	.area3TextBox{
+		width:100%;
+		padding:2% 2% 2% 4%;
+		opacity: 0;
+	}
+	.area3A{
+		font-size:80px;
+		font-family:  'Lobster', cursive;
+		color:#d0af6a;
+		margin:0 auto;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area3Main{
+		font-size:40px;
+		font-family:  'Lobster', cursive;
+		margin-top: -1%;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area3P4{
+		font-size: 24px;
+		margin-bottom: 4%;
+	}
+/*-------------------------area4-----------------------------------------*/
+	.area4{
+		text-align: right;
+		color: #fff;
+	}
+	.area4TextBox{
+		opacity: 0;
+		width:100%;
+		padding:2% 4% 2% 2% ;;
+	}
+	.area4A{
+		font-size:80px;
+		font-family:  'Lobster', cursive;
+		color:#d0af6a;
+		margin:0 auto;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area4Main{
+		font-size:50px;
+		font-family:  'Lobster', cursive;
+		/*margin-top: -1%;*/
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area4P4{
+		font-size: 24px;
+		margin-bottom: 5%;
+	}
+	/*------------------area5--------------------------------*/
+	.area5{
+		color: #fff;
+	}
+	.area5TextBox{
+		opacity: 0;
+		width:100%;
+		padding:2% 2% 2% 4%;;
+	}
+	.area5A{
+		font-size:80px;
+		font-family:  'Lobster', cursive;
+		color:#d0af6a;
+		margin:0 auto;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area5Main{
+		font-size:50px;
+		font-family:  'Lobster', cursive;
+		/*margin-top: -1%;*/
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area5P4{
+		font-size: 24px;
+		margin-bottom: 5%;
+	}
+	/*-------------------area6---------------------------*/
+	.area6{
+		text-align: right;
+		color: #fff;
+	}
+	.area6TextBox{
+		opacity: 0;
+		width:100%;
+		padding:2% 4% 2% 2% ;;
+	}
+	.area6A{
+		font-size:80px;
+		font-family:  'Lobster', cursive;
+		color:#d0af6a;
+		margin:0 auto;
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area6Main{
+		font-size:50px;
+		font-family:  'Lobster', cursive;
+		/*margin-top: -1%;*/
+		text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+	}
+	.area6P4{
+		font-size: 24px;
+		margin-bottom: 5%;
+	}
+	/*-----------------------------------*/
+	.footerflex{
+		width:65%;
+		/*background: #ca5811;*/
+		display: flex;
+		margin:0 auto;
+		padding-top:50px ;
+		justify-content: space-between;
+	}
+	.footerInf{
+		flex-basis:25%;
+	}
+	iframe{
+		flex-basis:70%;
+		display: block;
+		/*width:60%;*/
+		/*width:700px;*/
+		height:300px;
+	}
+	.bottomInf{
+		color:#d7c5a0;
+		font-size: 16px;
+		font-weight: 800;
+	}
+	.bottomInf1{
+		color:#000;
+		font-size: 14px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<section>
+			<article class="area1">
+				<div class="menu transition" >
+				<ul class="transition">
+			        <div class="space"></div>
+			        <li><a href="about_us.html" class=""><img class="frontImg" src="images/icon_coffee.png" alt="">About CAMACA</a></li>
+			        <li><a href="arts.html" class=""><img class="frontImg" src="images/icon_coffee.png" alt="">Arts</a></li>
+			        <li><a href="product.html" class=""><img class="frontImg" src="images/icon_coffee.png" alt="">Product</a></li>
+			        <li><a href="contact.html" class=""><img class="frontImg" src="images/icon_coffee.png" alt="">Contact</a></li>
+					<li><a href="index.html" class="" ><img class="frontImg" src="images/icon_coffee.png" alt="">Home</a></li>
+		        </ul>
+		        <div class="bar bar1 transition"></div>
+		        <div class="bar bar2 transition"></div>
+		        <div class="bar bar3 transition"></div>
+		    	</div>
+				<div class="divH1"><h1>ABOUT&nbsp;&nbsp;&nbsp;CAMACA</h1></div>
+			</article><!--area1-->
+
+			<article class="area2 ">
+				<p class="area2P animated fadeInUp transition">CAMACA以瑞士莊園頂級巧克力實現美味和健康兼具，不只是一種理念更是一種堅持!</p>
+				<div class="area2Text animated transition">
+					<p class="area2C">C</p><p class="area2CA">Camaca Art</p>
+				</div>
+				<p class="area2P4 animated fadeInUp transition">甜點不只是甜點 更是藝術的象徵</p>
+				<p class="animated fadeInUp transition">CAMACA研發的所有產品皆有字母〝C〞為開頭</p>
+				<p class="animated fadeInUp transition">如：chocolate、cake、coffee、 candy、cookie，絕美手製出甜點藝術臻品。</p>
+			</article><!--area2-->
+
+			<article class="area3">
+				<div class="area3TextBox animated transition">
+					<div class="area3Text">
+						<p class="area3A">A</p><p class="area3Main">All the top technology &</p><p class="area3Main"> the best quality raw material</p>
+					</div>
+					<p class="area3P4">堅持使用最頂級技術、最優質原物料，為了呈現最美好的食物</p>
+					<p>「CAMACA」每一個字母都有其含義，</p>
+					<p>而當中3個A既代表ALL也代表著所有產品都用最頂級的A++技術和原料，獻給最食尚的您。</p>
+				</div>
+			</article><!--area3-->
+
+			<article class="area4">
+				<div class="area4TextBox animated transition">
+					<div class="area4Text">
+						<p class="area4A">MA</p><p class="area4Main">Mother is the most loving family</p>
+					</div>
+					<p class="area4P4">媽媽堅持給最好的食物留給家人</p>
+					<p>MA代表母親的意涵，因為媽媽會堅持把最好的食物留給最關愛的家人，</p>
+					<p>也絕不會拿有毒害物質的食物給孩子，並且希望家人都是健康歡樂的！</p>
+				</div>
+			</article><!--area4-->
+
+			<article class="area5">
+				<div class="area5TextBox animated transition">
+					<div class="area5Text">
+						<p class="area5A">C</p><p class="area5Main">Comfortable environment</p>
+					</div>
+					<p class="area5P4">美味甜點 舒適悠閒環境相伴 幸福滿分人</p>
+					<p>CAMACA以大地、森林和陽光等大自然的療癒三原色，搭配上日耳曼建築的裝飾藝術，</p>
+					<p>以不破壞原有建築物之力與美，精心打造出屬於悠閒樂活的南法風巧克力莊園，</p>
+					<p>給您最愜意的輕悠時光。</p>
+				</div>
+			</article><!--area5-->
+
+			<article class="area6">
+				<div class="area6TextBox animated transition">
+					<div class="area6Text">
+						<p class="area6A">A</p><p class="area6Main">Alter the world</p>
+					</div>
+					<p class="area6P4">喚醒味蕾對品味美食的覺醒</p>
+					<p>CAMACA致力於美食甜點革命，秉持健康與美味兼具的精神，</p>
+					<p>嚴選之健康糖「麥芽糖醇」、「海藻糖」、「異麥芽糖醇」、「赤藻糖醇」等高品質醣類，</p>
+					<p>讓享受甜點美食的您健康無負擔。</p>
+				</div>
+			</article><!--area5-->
+		</section>
+		<footer>
+			<div class="footerflex">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.2886932644897!2d120.53185761538832!3d23.701382496563056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ec818ce71b16d%3A0xf1324600ad4cf0c1!2zNjQw6Zuy5p6X57ij5paX5YWt5biC5Lit5aCF6KW_6LevMjY46Jmf!5e0!3m2!1szh-TW!2stw!4v1521987220104" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<div class="footerInf">
+					<p class="bottomInf">INFORMATION</p>
+					<p class="bottomInf1">卡莫卡巧克力莊園</p>
+					<p class="bottomInf1">電話：05-533-6668</p>
+					<p class="bottomInf1">雲林縣斗六市中堅西路268號</p>
+					<p class="bottomInf1">營業時間：13:00 ~ 21:00 每周二公休</p>
+				</div>
+				<!--<div class="map"></div>-->
+			</div>
+		</footer>
+	</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script>
+	$(".menu").click(function(e){
+      e.stopPropagation();
+        $(this).toggleClass("active");
+    });
+    $("html").click(function(){
+        $(".menu").removeClass("active");
+    });
+
+
+    $(window).scroll(function(){
+        var scrollNow=$(this).scrollTop();
+        // console.log(scrollNow);
+
+        if(scrollNow >= 200){
+            $(".area3TextBox").addClass("fadeInLeft").css("opacity","1");
+		}else {
+            $(".area3TextBox").removeClass("fadeInLeft").css("opacity","0");
+		}
+
+
+        if(scrollNow >= 900){
+            $(".area4TextBox").addClass("fadeInRight").css("opacity","1");
+        }else {
+            $(".area4TextBox").removeClass("fadeInRight").css("opacity","0");
+        }
+
+
+        if(scrollNow >= 1400){
+            $(".area5TextBox").addClass("fadeInLeft").css("opacity","1");
+        }else {
+            $(".area5TextBox").removeClass("fadeInLeft").css("opacity","0");
+        }
+
+
+        if(scrollNow >= 2000){
+            $(".area6TextBox").addClass("fadeInRight").css("opacity","1");
+        }else {
+            $(".area6TextBox").removeClass("fadeInRight").css("opacity","0");
+        }
+
+
+
+	});
+
+
+
+
+    // $(".area3TextBox").css("opacity","0");
+    // $(".area4TextBox").css("opacity","0");
+    // $(".area5TextBox").css("opacity","0");
+    // $(window).scroll(function () {
+		// var scrollNow=$(this).scrollTop();
+		// console.log(scrollNow);
+		// if(scrollNow >=200){
+    //         $(".area3TextBox").addClass("fadeInLeft").css("opacity","1");
+		// }else if(scrollNow >=900){
+    //         $(".area4TextBox").addClass("fadeInRight").css("opacity","1");
+    //     }else if(scrollNow >=1400){
+    //         $(".area5TextBox").addClass("fadeInLeft").css("opacity","1");
+    //     }
+    //
+    // });
+
+	</script>
+</body>
+</html>

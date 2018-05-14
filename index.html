@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chocolate</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="js/vegas/vegas.min.css">
+	<link href="js/hamburgers-master/dist/hamburgers.css" rel="stylesheet">
+</head>
+<style>
+	*{
+		margin:0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	a{
+		color:#fff;
+	}
+	li{
+		list-style-type: none;
+	}
+	.logo{
+		width:455px;
+		height:454px;
+		/*background: #FFA1A1;*/
+		margin:0 auto;
+		padding-top:6%;
+	}
+	.logo img{
+		display: block;
+	}
+	/*---------------------------------------------------------*/
+	.space{
+		height:100px;
+	}
+	.transition{
+   		transition: 0.4s;
+	}
+	.menu{
+	    display: inline-block;
+	    cursor: pointer;
+	    padding:30px;
+	    position: relative;
+	}
+
+	.menu ul{
+	    /*background: #000;*/
+	    position: absolute;
+	    height:100vh;
+	    max-width: 0px;
+	    overflow: hidden;
+	    top:0;
+	    left:0;
+	    /*filter: blur(8px);*/
+	}
+	.menu.active ul{
+		background: rgba(0,0,0,.4);
+		
+	    /*max-width:600px;*/
+	    max-width:1800px;
+	}
+	.menu ul li{
+		width:600px;
+		height:100px;
+		color:#fff;
+		line-height: 100px;
+	}
+	.menu ul li:hover a{
+		color:#bd9f60;
+		text-decoration: none;
+	}
+	.menu ul li a{
+		/*width:600px;
+		height:100px;*/
+	    display: block;
+	    padding:0px 15px;
+	    font-size: 28px;
+	}
+	
+	ul,li{
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
+	}
+	.bar{
+	    width: 50px;
+	    height: 5px;
+	    background: #fff;
+	    margin: 10px 0;
+	    border-radius: 2px;
+	}
+	/*.menu:hover .bar1,.menu:hover .bar2,.menu:hover .bar3{
+	    background:rgba(255,255,255,.7);
+	}*/
+	.active .bar1{
+	    transform: rotate(-45deg) translate(-11px, 9px) ;
+	    /*background-color: #000;*/
+	}
+
+	.active .bar2{
+		opacity: 0;
+	}
+
+	.active .bar3{
+	    transform: rotate(45deg) translate(-12px, -10px) ;
+	    /*background-color: #000;*/
+	}
+	.frontImg{
+		width:5%;
+		height:5%;
+		margin-right: 10px;
+	}
+</style>
+<body>
+	<div class="wrap">
+		<header>
+			<div class="menu transition" >
+				<ul class="transition">
+			        <div class="space"></div>
+			        <li><a class="" href="about_us.html"><img class="frontImg" src="images/icon_coffee.png" alt="">About CAMACA</a></li>
+			        <li><a class="" href="arts.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Arts</a></li>
+			        <li><a class="" href="product.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Product</a></li>
+			        <li><a class="" href="contact.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Contact</a></li>
+			        <li><a class="" href="index.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Home</a></li>
+		        </ul>
+		        <div class="bar bar1 transition"></div>
+		        <div class="bar bar2 transition"></div>
+		        <div class="bar bar3 transition"></div>
+		    </div>
+		</header>
+		<section class="logo">
+			<h1 class="logoH1"><img src="images/ilogo.png" alt=""></h1>
+		</section>
+		
+	</div>
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="js/vegas/vegas.min.js"></script>
+  <script>
+  	//background
+  	$("#example, body").vegas({
+  		timer:false,
+  		delay:3000,
+	    slides: [
+	        { src: "images/bg1.jpg" },
+	        { src: "images/bg2.jpg" },
+	        { src: "images/bg3.jpg" },
+	        { src: "images/bg4.jpg" },
+	        { src: "images/bg5.jpg" }
+	    ]
+	});
+
+	
+	//
+	$(".menu").click(function(e){
+      e.stopPropagation();
+        $(this).toggleClass("active");
+    });
+    $("html").click(function(){
+        $(".menu").removeClass("active");
+    });
+  </script>
+</body>
+</html>

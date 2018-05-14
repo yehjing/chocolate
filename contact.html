@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <style>
+        * {
+            font-family: '微軟正黑體';
+            /*font-family: 'Lobster', cursive;*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /*--------menu-------*/
+        .space {
+            height: 100px;
+        }
+
+        .transition {
+            transition: 0.4s;
+        }
+
+        .menu {
+            display: inline-block;
+            cursor: pointer;
+            padding: 30px;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .menu ul {
+            /*background: #000;*/
+            position: absolute;
+            height: 100vh;
+            max-width: 0px;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            /*filter: blur(8px);*/
+        }
+
+        .menu.active ul {
+            background: rgba(0, 0, 0, .4);
+
+            /*max-width:600px;*/
+            max-width: 1800px;
+        }
+
+        .menu ul li {
+            width: 600px;
+            height: 100px;
+            color: #fff;
+            line-height: 100px;
+        }
+
+        .menu ul li:hover a {
+            color: #bd9f60;
+            text-decoration: none;
+        }
+
+        .menu ul li a {
+            /*width:600px;
+            height:100px;*/
+            display: block;
+            padding: 0px 15px;
+            font-size: 28px;
+        }
+
+        ul, li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bar {
+            width: 50px;
+            height: 5px;
+            background: #fff;
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+
+        .black{
+            background:rgb(184, 147, 91);
+        }
+
+        .active .bar1 {
+            transform: rotate(-45deg) translate(-11px, 9px);
+            /*background-color: #000;*/
+        }
+
+        .active .bar2 {
+            opacity: 0;
+        }
+
+        .active .bar3 {
+            transform: rotate(45deg) translate(-12px, -10px);
+            /*background-color: #000;*/
+        }
+
+        .frontImg {
+            width: 5%;
+            height: 5%;
+            margin-right: 10px;
+        }
+
+        /*-----------------------------------*/
+        header {
+            height: 300px;
+            width: 100%;
+            background: url("images/artsbg.jpg") no-repeat 10% 40%;
+            background-size: cover;
+        }
+
+        .divH1 {
+            text-align: center;
+            line-height: 300px;
+            color: #fff;
+
+        }
+
+        .divH1 h1 {
+            font-size: 40px;
+            font-weight: 500;
+            text-shadow: 0 0 8px #FFFFFF;
+        }
+        /*---------------------------------------*/
+        section{
+            background: url("images/cbg2.jpg") 0 0 ;
+            height:550px;
+        }
+        .content{
+            margin:0 auto;
+            width:75%;
+            display: flex;
+            padding-top:20px;
+        }
+        .left{
+            flex: 1.5;
+        }
+        figure{
+            margin: 0 auto;
+            width:660px;
+            height:480px;
+            overflow: hidden;
+        }
+        img{
+            width: 100%;
+        }
+        .information{
+            flex:1;
+        }
+        .information h2{
+            color:rgb(184, 147, 91);
+            padding: 3px;
+            margin-top:20px;
+        }
+        .information p{
+            color:#fff;
+            padding:3px;
+        }
+        input{
+            margin:10px 0;
+            width:80%;
+            padding: 10px;
+            border-radius: 5px;
+            border:1px solid #6e6057;
+            background: rgba(255,255,255,0.1);
+            color:#fff;
+        }
+        textarea{
+            margin:10px 0;
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            border:1px solid #6e6057;
+            background: rgba(255,255,255,0.1);
+            color:#fff;
+        }
+        .submit{
+            display: block;
+            background: #9d4813;
+            width:20%;
+            padding:5px 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .submit:hover{
+            background: #ca5811;
+        }
+        /*---------footer----------------------*/
+        footer{
+            width: 100%;
+            height:380px;
+            background:linear-gradient(135deg, #efe6d7 0%,#ffffff 42%,#ffffff 57%,#efe6d7 100%);
+        }
+        .footerflex{
+            width:65%;
+            /*background: #ca5811;*/
+            display: flex;
+            margin:0 auto;
+            padding-top:50px ;
+            justify-content: space-between;
+        }
+        .footerInf{
+            flex-basis:25%;
+        }
+        iframe{
+            flex-basis:70%;
+            display: block;
+            /*width:60%;*/
+            /*width:700px;*/
+            height:300px;
+        }
+        .bottomInf{
+            color:#d7c5a0;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .bottomInf1{
+            color:#000;
+            font-size: 14px;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <div class="menu transition">
+            <ul class="transition">
+                <div class="space"></div>
+                <li><a class="" href="about_us.html"><img class="frontImg" src="images/icon_coffee.png" alt="">About
+                    CAMACA</a></li>
+                <li><a class="" href="arts.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Arts</a></li>
+                <li><a class="" href="product.html"><img class="frontImg" src="images/icon_coffee.png"
+                                                         alt="">Product</a></li>
+                <li><a class="" href="contact.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Contact</a></li>
+                <li><a class="" href="index.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Home</a>
+                </li>
+            </ul>
+            <div class="bar bar1 transition"></div>
+            <div class="bar bar2 transition"></div>
+            <div class="bar bar3 transition"></div>
+        </div>
+        <div class="divH1"><h1>CONTACT</h1></div>
+    </header>
+    <section>
+        <div class="content">
+            <div class="left">
+                <figure><img src="images/brownMap.png" alt=""></figure>
+            </div>
+            <div class="information">
+                <h2>聯繫卡莫卡</h2>
+                <p>雲林縣斗六市中堅西路268號</p>
+                <p>可可專線：05-533-6668</p>
+                <p>營業時間：13:00 ~ 21:00 每周二公休</p>
+                <from>
+                    <input type="text" placeholder="您的姓名">
+                    <input type="text" placeholder="連絡電話">
+                    <input type="text" placeholder="E-mail">
+                    <textarea name="" id="" cols="30" rows="5" placeholder="您的問題或建議"></textarea>
+                    <a class="submit" href="">送出</a>
+                </from>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerflex">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.2886932644897!2d120.53185761538832!3d23.701382496563056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ec818ce71b16d%3A0xf1324600ad4cf0c1!2zNjQw6Zuy5p6X57ij5paX5YWt5biC5Lit5aCF6KW_6LevMjY46Jmf!5e0!3m2!1szh-TW!2stw!4v1521987220104" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div class="footerInf">
+                <p class="bottomInf">INFORMATION</p>
+                <p class="bottomInf1">卡莫卡巧克力莊園</p>
+                <p class="bottomInf1">電話：05-533-6668</p>
+                <p class="bottomInf1">雲林縣斗六市中堅西路268號</p>
+                <p class="bottomInf1">營業時間：13:00 ~ 21:00 每周二公休</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="js/vegas/vegas.min.js"></script>
+<script>
+
+    //burger
+    $(".menu").click(function (e) {
+        e.stopPropagation();
+        $(this).toggleClass("active");
+    });
+    $("html").click(function () {
+        $(".menu").removeClass("active");
+    });
+
+</script>
+
+</body>
+</html>

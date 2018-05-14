@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <style>
+        * {
+            font-family: '微軟正黑體';
+            /*font-family: 'Lobster', cursive;*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /*--------menu-------*/
+        .space {
+            height: 100px;
+        }
+
+        .transition {
+            transition: 0.4s;
+        }
+
+        .menu {
+            display: inline-block;
+            cursor: pointer;
+            padding: 30px;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .menu ul {
+            /*background: #000;*/
+            position: absolute;
+            height: 100vh;
+            max-width: 0px;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            /*filter: blur(8px);*/
+        }
+
+        .menu.active ul {
+            background: rgba(0, 0, 0, .4);
+
+            /*max-width:600px;*/
+            max-width: 1800px;
+        }
+
+        .menu ul li {
+            width: 600px;
+            height: 100px;
+            color: #fff;
+            line-height: 100px;
+        }
+
+        .menu ul li:hover a {
+            color: #bd9f60;
+            text-decoration: none;
+        }
+
+        .menu ul li a {
+            /*width:600px;
+            height:100px;*/
+            display: block;
+            padding: 0px 15px;
+            font-size: 28px;
+        }
+
+        ul, li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bar {
+            width: 50px;
+            height: 5px;
+            background: #fff;
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+
+        .black{
+            background:rgb(184, 147, 91);
+        }
+        .active .bar1 {
+            transform: rotate(-45deg) translate(-11px, 9px);
+            /*background-color: #000;*/
+        }
+
+        .active .bar2 {
+            opacity: 0;
+        }
+
+        .active .bar3 {
+            transform: rotate(45deg) translate(-12px, -10px);
+            /*background-color: #000;*/
+        }
+
+        .frontImg {
+            width: 5%;
+            height: 5%;
+            margin-right: 10px;
+        }
+
+        /*-----------------------------------*/
+
+        header {
+            height: 300px;
+            width: 100%;
+            background: url("images/productbg.jpg") no-repeat center center;
+            background-size: cover;
+        }
+
+        .divH1 {
+            text-align: center;
+            line-height: 300px;
+            color: #fff;
+
+        }
+
+        .divH1 h1 {
+            font-size: 40px;
+            font-weight: 500;
+            text-shadow: 0 0 8px #FFFFFF;
+        }
+
+        /*-------------section---------------*/
+        .secBg {
+            background: url("images/cbg3yellow.jpg") center center;
+            height: 1300px;
+            width: 100%;
+
+        }
+
+        .flexBox {
+            display: flex;
+            width: 1300px;
+            /*background: aqua;*/
+            margin: 0 auto;
+            height: 1300px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .box {
+            /*width: 250px;*/
+            height: 335px;
+            /*background-color: #bd9f60;*/
+            flex: 0 0 20%;
+            margin: 2%;
+
+        }
+
+        .pic img {
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+            width: 230px;
+            height: 230px;
+        }
+        .pic:hover img{
+            opacity:.6;
+            transition: .5s;
+            cursor: pointer;
+        }
+
+        .txt {
+            text-align: center;
+            margin-top: 10px;
+            line-height: 22px;
+        }
+
+        .fz14 {
+            font-size: 14px;
+            margin: 2px auto;
+        }
+
+        .btnBox {
+            /*height:40px;*/
+            width: 55%;
+            margin: 10px auto;
+            background: blue;
+        }
+        .btnBox a:hover{
+            background-color:#8e6d3c;
+            transition: .5s;
+        }
+
+        .addCart {
+            width: 35%;
+            height: 31px;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            line-height: 31px;
+            background: rgb(184, 147, 91);
+            float: left;
+            font-size: 14px;
+        }
+
+        .cart {
+            width: 60%;
+            height: 31px;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            line-height: 31px;
+            background: rgb(184, 147, 91);
+            float: right;
+            font-size: 14px;
+        }
+
+        .iconCart {
+            margin-top: 5px;
+            width: 20px;
+            height: 20px;
+        }
+        /*---------footer----------------------*/
+        footer{
+            width: 100%;
+            height:380px;
+            background:linear-gradient(135deg, #efe6d7 0%,#ffffff 42%,#ffffff 57%,#efe6d7 100%);
+        }
+        .footerflex{
+            width:65%;
+            /*background: #ca5811;*/
+            display: flex;
+            margin:0 auto;
+            padding-top:50px ;
+            justify-content: space-between;
+        }
+        .footerInf{
+            flex-basis:25%;
+        }
+        iframe{
+            flex-basis:70%;
+            display: block;
+            /*width:60%;*/
+            /*width:700px;*/
+            height:300px;
+        }
+        .bottomInf{
+            color:#d7c5a0;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .bottomInf1{
+            color:#000;
+            font-size: 14px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <div class="menu transition">
+            <ul class="transition">
+                <div class="space"></div>
+                <li><a class="" href="about_us.html"><img class="frontImg" src="images/icon_coffee.png" alt="">About  CAMACA</a></li>
+                <li><a class="" href="arts.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Arts</a></li>
+                <li><a class="" href="product.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Product</a></li>
+                <li><a class="" href="contact.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Contact</a></li>
+                <li><a class="" href="index.html"><img class="frontImg" src="images/icon_coffee.png" alt="">Home</a></li>
+            </ul>
+            <div class="bar bar1 transition"></div>
+            <div class="bar bar2 transition"></div>
+            <div class="bar bar3 transition"></div>
+        </div>
+        <div class="divH1"><h1>PRODUCT</h1></div>
+    </header>
+
+    <section class="secBg">
+        <div class="flexBox">
+            <div class="box">
+                <div class="pic"><img src="images/product01.jpg" alt=""></div>
+                <div class="txt"><p>5度窖藏生巧克力(抹茶白巧)</p>
+                    <p class="fz14">NT300 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product02.jpg" alt=""></div>
+                <div class="txt"><p>堅果之王</p>
+                    <p class="fz14">NT280 / 片</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product03.jpg" alt=""></div>
+                <div class="txt"><p>純粹風味─莊園薄片</p>
+                    <p class="fz14">NT720 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product04.jpg" alt=""></div>
+                <div class="txt"><p>愛讀書系列</p>
+                    <p class="fz14">NT280 / 片</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product05.jpg" alt=""></div>
+                <div class="txt"><p>5度窖藏生巧克力(覆盆莓白巧)</p>
+                    <p class="fz14">NT300 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product06.jpg" alt=""></div>
+                <div class="txt"><p>5度窖藏生巧克力(92%)</p>
+                    <p class="fz14">NT380 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product07.jpg" alt=""></div>
+                <div class="txt"><p>5度窖藏生巧克力(85%)</p>
+                    <p class="fz14">NT350 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product08.jpg" alt=""></div>
+                <div class="txt"><p>瑞士頂級巧克力風味磚</p>
+                    <p class="fz14">NT360 / 100g</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product09.jpg" alt=""></div>
+                <div class="txt"><p>5度窖藏生巧克力(麥芽糖醇)</p>
+                    <p class="fz14">NT350 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product10.jpg" alt=""></div>
+                <div class="txt"><p>巧克力湯匙</p>
+                    <p class="fz14">NT120 / 支</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product11.jpg" alt=""></div>
+                <div class="txt"><p>蒙蒂安禮盒</p>
+                    <p class="fz14">NT780 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+            <div class="box">
+                <div class="pic"><img src="images/product12.jpg" alt=""></div>
+                <div class="txt"><p>臻摯藏心禮盒</p>
+                    <p class="fz14">NT680 / 盒</p></div>
+                <div class="btnBox"><a class="addCart" href=""><img class="iconCart" src="images/icon_scar2.png" alt=""></a><a
+                        class="cart" href="">立即結帳</a></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerflex">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.2886932644897!2d120.53185761538832!3d23.701382496563056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ec818ce71b16d%3A0xf1324600ad4cf0c1!2zNjQw6Zuy5p6X57ij5paX5YWt5biC5Lit5aCF6KW_6LevMjY46Jmf!5e0!3m2!1szh-TW!2stw!4v1521987220104" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div class="footerInf">
+                <p class="bottomInf">INFORMATION</p>
+                <p class="bottomInf1">卡莫卡巧克力莊園</p>
+                <p class="bottomInf1">電話：05-533-6668</p>
+                <p class="bottomInf1">雲林縣斗六市中堅西路268號</p>
+                <p class="bottomInf1">營業時間：13:00 ~ 21:00 每周二公休</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="js/vegas/vegas.min.js"></script>
+<script>
+
+    //
+    $(".menu").click(function (e) {
+        e.stopPropagation();
+        $(this).toggleClass("active");
+    });
+    $("html").click(function () {
+        $(".menu").removeClass("active");
+    });
+
+
+    $(window).scroll(function(){
+        var scrollNow=$(this).scrollTop();
+        // console.log(scrollNow);
+
+        if(scrollNow >= 300){
+            $(".bar").addClass("black");
+        }else {
+            $(".bar").removeClass("black");
+        }
+    });
+</script>
+</body>
+</html>
